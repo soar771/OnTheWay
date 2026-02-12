@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: @activatedProperties@
+  application:
+    name: config-server
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    org.springframework.cloud.config: DEBUG
+
+#secret-key-must-be-at-least-256-bits-long-here-32-chars
+jwt:
+  secrete_key: toset
+
+amap:
+  secrete_key: toset

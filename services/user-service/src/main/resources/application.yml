@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: user-service
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com.soar.ontheway.user: DEBUG
+    com.soar.ontheway.user.mapper: TRACE
+    org.apache.ibatis: TRACE
+    org.springframework: INFO
+    org.hibernate: WARN

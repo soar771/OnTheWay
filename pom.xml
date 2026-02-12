@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.5.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.soar.railway</groupId>
     <artifactId>on-the-way</artifactId>
@@ -23,7 +23,9 @@
     </developers>
     <modules>
         <module>services</module>
-        <module>services/user</module>
+        <module>services/user-service</module>
+        <module>common</module>
+        <module>config</module>
     </modules>
     <scm>
         <connection/>
@@ -35,24 +37,35 @@
         <java.version>24</java.version>
     </properties>
     <dependencies>
+        <!-- redis -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>4.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web-services</artifactId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>4.0.1</version>
         </dependency>
 
+        <!-- logback -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.5.28</version>
         </dependency>
+        <!-- 支持Self4j，实现完整逻辑 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.28</version>
+        </dependency>
+        <!-- 与Servlet集成，处理HTTP日志 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-access</artifactId>
+            <version>1.5.28</version>
         </dependency>
     </dependencies>
 

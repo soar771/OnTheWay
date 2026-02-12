@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soar.ontheway.user.dao.UserDao">
+    <insert id="insertUser" parameterType="com.soar.ontheway.user.entity.vo.UserRegisterRequestVo">
+        insert into
+        user(username, password, id_type, id_card_number, user_type, phone, email)
+        values(#{user.username, user.password, user.idType, user.idCardNumber, user.userType, user.phone, user.email})
+    </insert>
+    <select id="queryUserByUsername" resultType="com.soar.ontheway.user.entity.po.UserPo">
+        select * from user where username = #{username}
+    </select>
+</mapper>

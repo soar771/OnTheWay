@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 引入外部属性文件，如数据库连接信息 -->
+    <properties resource="db.properties"/>
+
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!-- 设置别名-->
+    <typeAliases>
+        <!-- 可以逐个指定，也可以扫描整个包 -->
+        <!-- <typeAlias type="com.example.model.User" alias="User"/> -->
+        <!-- <package name="com.example.model"/> -->
+    </typeAliases>
+
+    <!-- 配置数据库环境，default指定默认使用的环境ID -->
+    <environments default="development">
+        <environment id="development">
+            <!-- 事务管理器类型 -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源类型，POOLED表示使用连接池 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 指定Mapper映射文件的位置 -->
+    <mappers>
+        <!-- 可以逐个注册XML文件或接口 -->
+<!--         <mapper resource="mapper/UserMapper.xml"/> -->
+        <!-- 也可以扫描整个包下的Mapper接口（需配合注解或XML） -->
+<!--        <package name="com.example.mapper"/>-->
+        <mapper resource="mapper/*.xml"/>
+    </mappers>
+
+</configuration>

@@ -1,14 +1,11 @@
-package com.soar.ontheway.user;
+package com.soar.ontheway.ticket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UserApplication {
-
+public class TicketApplication {
     public static void main(String[] args) {
-        SpringApplication.run(UserApplication.class, args);
+        SpringApplication.run(TicketApplication.class, args);
     }
-
 }
-
