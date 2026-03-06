@@ -1,5 +1,10 @@
 package com.soar.ontheway.ticket.vo.request;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class QueryDistrictsRequestVo {
     /**
      * 只支持单个关键词语搜索关键词
@@ -23,27 +28,4 @@ public class QueryDistrictsRequestVo {
      */
     private String extensions;
 
-    public String getKeywords() {
-        return keywords;
-    }
-
-    public void setKeywords(String keywords) {
-        this.keywords = keywords;
-    }
-
-    public Integer getSubdistrict() {
-        return subdistrict;
-    }
-
-    public void setSubdistrict(Integer subdistrict) {
-        this.subdistrict = subdistrict;
-    }
-
-    public String getExtensions() {
-        return extensions;
-    }
-
-    public void setExtensions(String extensions) {
-        this.extensions = extensions;
-    }
 }
